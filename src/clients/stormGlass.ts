@@ -1,7 +1,7 @@
 import { InternalError } from '@src/util/errors/internal-error';
 import { AxiosError } from 'axios';
 import config, { IConfig } from 'config';
-import * as HTTPUtil from '@src/util/request' 
+import * as HTTPUtil from '@src/util/request';
 
 export interface StormGlassPointSource {
   [key: string]: number;
@@ -49,7 +49,9 @@ export class StormGlassResponseError extends InternalError {
   }
 }
 
-const stormGlassResourceConfig: IConfig = config.get('App.resources.StormGlass');
+const stormGlassResourceConfig: IConfig = config.get(
+  'App.resources.StormGlass'
+);
 
 export class StormGlass {
   readonly stormGlassAPIParams =
@@ -78,7 +80,7 @@ export class StormGlass {
       /**
        * This is handling the Axios errors specifically
        */
-      if (HTTPUtil.Request.isRequestError((err as AxiosError))) {
+      if (HTTPUtil.Request.isRequestError(err as AxiosError)) {
         throw new StormGlassResponseError(
           `Error ${JSON.stringify((err as AxiosError).response?.data)} Code: ${
             (err as AxiosError).response?.status
