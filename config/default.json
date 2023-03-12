@@ -1,5 +1,8 @@
 {
   "App": {
+    "database": {
+      "mongoUrl": "mongodb+srv://wallacy:FromTopToBottom@surf-forecast.1en1utd.mongodb.net/?retryWrites=true&w=majority"
+    },
     "resources": {
       "StormGlass": {
         "apiUrl": "https://api.stormglass.io/v2",
