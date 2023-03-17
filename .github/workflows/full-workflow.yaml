@@ -32,4 +32,13 @@ jobs:
       run: yarn --frozen-lockfile
 
     - name: Run all tests
+      env:
+        MONGODB_URL: 'mongodb://localhost:27017/surf-forecast'
       run: yarn tests
+
+    - shell: bash
+      if: github.ref == 'refs/heads/main'
+      name: Create SSH deployment key
+      env:
+        SSH_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+      run: ./scripts/deploy.sh
