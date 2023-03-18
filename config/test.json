@@ -4,6 +4,12 @@
       "StormGlass": {
         "apiToken": "test-token"
       }
+    },
+    "database": {
+      "mongoUrl": "mongodb+srv://wallacy:FromTopToBottom@surf-forecast-test.1en1utd.mongodb.net/?retryWrites=true&w=majority"
+    },
+    "logger": {
+      "enabled": false
     }
   }
 }
