@@ -34,7 +34,7 @@ jobs:
     - name: Run all tests
       env:
         MONGODB_URL: 'mongodb://localhost:27017/surf-forecast'
-      run: yarn tests
+      run: yarn test
 
     # - shell: bash
     #   if: github.ref == 'refs/heads/main'
